@@ -2,9 +2,9 @@
 project('picalc_07', 'cpp',
         license : ['Boost'],
         version : '0.1',
-        default_options : ['cpp_std=c++17', 'warning_level=3', 'werror=true'])
+        default_options : ['cpp_std=c++17', 'warning_level=3', 'werror=false'])
 
-thread_dep = dependency('threads')
+# thread_dep = dependency('threads')
 
 # begin asio: https://think-async.com/Asio/
 add_global_arguments('-I' + get_option('asio_include_dir'), language : 'cpp')
@@ -44,6 +44,5 @@ src = ['src/main.cpp']
 
 executable('picalc',
            sources : src,
-           include_directories : inc_dir,
-           dependencies : [thread_dep]
+           include_directories : inc_dir
           )
