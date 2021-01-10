@@ -1,0 +1,73 @@
+\documentclass{article}
+%encoding
+%--------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{svg}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4
+}
+
+\lstset{style=mystyle}
+%--------------------------------------
+
+%German-specific commands
+%--------------------------------------
+\usepackage[ngerman]{babel}
+%--------------------------------------
+
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+\hyphenation{Mathe-matik wieder-gewinnen}
+\usepackage{lipsum}
+%--------------------------------------
+\begin{document}
+\pagenumbering{gobble}
+\clearpage
+\thispagestyle{empty}
+\author{Rafael Schreiber}
+\date{10. Januar 2021}
+\title{Berechnung der Kreiszahl $\pi$ mithilfe der Leibniz' Formel}
+\maketitle
+\clearpage
+\pagenumbering{arabic}
+\tableofcontents
+\newpage
+
+\section{Einleitung}
+\subsection{Aufgabenstellung}
+Laut der Angabe ist das Ziel dieses Programms die Kreiszahl pi zu berechnen. Dabei soll die Leibniz' Formel zur Annäherung an die Zahl verwendet werden.
+
+
+$\sum _{k=0}^{\infty }{\frac {(-1)^{k}}{2k+1}}=1-{\frac {1}{3}}+{\frac {1}{5}}-{\frac {1}{7}}+{\frac {1}{9}}-\dotsb ={\frac {\pi }{4}}$
+
+
+Wie in der Formel zu erkennen ist, gibt es positive und negative Terme. In der geforderten Implementierung wird erwartet, dass die negativen und positiven Terme auf je zwei Prozesse aufgeteilt werden, damit die jeweiligen Ergebnise parallel und damit auch hoffentlich  schneller berechnet werden können.
+
+Die Angabe schreibt vor, dass der Elternprozess diese zwei Kindprozesse erstellt und dann darauf wartet, bis die Kindprozesse ihre Terme fertig berechnet haben. Die jeweils positiven und negativen Ergebise werden in eine Textdatei geschrieben, welche dann vom Elternprozess ausgelesen wird, damit dieser die entgültige Berechnung durchführen kann.
+
+\end{document}

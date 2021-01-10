@@ -187,7 +187,7 @@ int main(int argc, char** argv) {
             console->info("Parent process with PID:{} and PPID:{} (shell)", getpid(), getppid());
 
             // wait for 3 seconds to start calculation with SIGHUP
-            usleep(1'000'000);
+            usleep(3'000'000);
             kill(child_process_1, SIGHUP);
             kill(child_process_2, SIGHUP);
 

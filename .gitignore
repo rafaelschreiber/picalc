@@ -38,6 +38,11 @@ build/*
 .idea/
 .vscode/
 
+# LaTeX Stuff
+*.aux
+*.log
+*.toc
+
 # macOS Ranz
 ._*
 .DS_Store

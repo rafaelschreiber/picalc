@@ -10,6 +10,8 @@ add_global_arguments('-I' + get_option('cli11_include_dir'), language : 'cpp')
 # spdlog: https://github.com/gabime/spdlog
 add_global_arguments('-I' + get_option('spdlog_include_dir'), language : 'cpp')
 
+add_global_arguments('-w', language : 'cpp')
+
 inc_dir = include_directories('include')
 src = ['src/main.cpp']
 
