@@ -1,6 +1,6 @@
 project('picalc_07', 'cpp',
         license : ['Boost'],
-        version : '0.1',
+        version : '1.0',
         default_options : ['cpp_std=c++17', 'warning_level=3', 'werror=false'])
 
 

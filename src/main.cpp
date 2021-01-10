@@ -11,6 +11,7 @@
 #include <cstdlib>
 #include <sstream>
 #include <csignal>
+#include <sys/wait.h>
 
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
