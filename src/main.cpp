@@ -28,12 +28,22 @@ using namespace std;
 
 // to cast the (partial) results from double to str with more precision
 template <typename T>
-string to_string_w_precision(const T a_value, const int n = 128){
+string to_string_w_precision(const T a_value, const int n = 256){
     ostringstream out;
     out.precision(n);
     out << fixed << a_value;
-    string out_str = out.str();
-    return out_str;
+    string flt = out.str();
+    reverse(flt.begin(), flt.end());
+    uint8_t trailing_zeros = 0;
+    for (char chr : flt){
+        if (chr != '0'){
+            break;
+        }
+        trailing_zeros++;
+    }
+    flt = flt.substr(trailing_zeros, flt.size());
+    reverse(flt.begin(), flt.end());
+    return flt;
 }
 
 // iterations for the Leibniz formular
