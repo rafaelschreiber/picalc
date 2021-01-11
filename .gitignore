@@ -42,6 +42,7 @@ build/*
 *.aux
 *.log
 *.toc
+_minted-main/
 
 # macOS Ranz
 ._*

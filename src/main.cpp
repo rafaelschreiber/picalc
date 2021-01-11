@@ -143,16 +143,6 @@ int main(int argc, char** argv) {
 
     console->set_level(spdlog::level::trace);
     
-    /*
-    console->trace("Welcome to picalc!");
-    console->debug("Welcome to spdlog!");
-    console->info("Welcome to spdlog!");
-    console->warn("Welcome to spdlog!");
-    console->error("Welcome to spdlog!");  // Achtung: spdlog::level::err
-    console->critical("Welcome to spdlog!");
-    // + spdlog::level::off
-    */
-
     if (n < 2){
         console->critical("The number of iterations must be greater than or equal to 2");
         return 1;
